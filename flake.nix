@@ -20,7 +20,7 @@
     devShells = forEachSupportedSystem ({pkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [
-          just gleam erlang
+          just gleam erlang_27
         ];
       };
     });
