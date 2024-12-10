@@ -116,10 +116,7 @@ fn calc_antinodes(p: Point, q: Point) -> #(Point, Point) {
 
 fn all_resonant_antinodes(ps: Set(Point), size: Int) -> Set(Point) {
   pairs(ps)
-  |> list.fold([], fn(res, pair) {
-    let nodes = calc_resonant_antinodes(pair.0, pair.1, size)
-    list.append(nodes, res)
-  })
+  |> list.flat_map(fn(pair) { calc_resonant_antinodes(pair.0, pair.1, size) })
   |> set.from_list
 }
 
