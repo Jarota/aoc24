@@ -1,10 +1,10 @@
 import gleam/io
-import internal/day8
+import internal/day9
 import simplifile.{read}
 
 pub fn main() {
-  case read("./inputs/8.txt") {
-    Ok(contents) -> io.println(day8.solve2(contents))
+  case read("./inputs/9-ex.txt") {
+    Ok(contents) -> io.println(day9.solve2(contents))
     Error(_) -> io.println_error("failed to read file")
   }
 }
